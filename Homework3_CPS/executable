@@ -1,0 +1,4 @@
+#!/bin/bash
+#echo "Path: "$(cd `dirname $0`; pwd)
+cd `dirname $0`
+python mapColoring.py

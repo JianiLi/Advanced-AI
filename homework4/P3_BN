@@ -1,0 +1,60 @@
+// Bayesian network 
+network "InternalNetwork" { //6 variables and 6 probability distributions
+}
+variable  "A" { //4 values
+	type discrete[4] {  "0"  "1"  "2"  "3" };
+	property "position = (420, 182)" ;
+}
+variable  "B" { //4 values
+	type discrete[4] {  "0"  "1"  "2"  "3" };
+	property "position = (265, 444)" ;
+}
+variable  "C" { //4 values
+	type discrete[4] {  "0"  "1"  "2"  "3" };
+	property "position = (589, 444)" ;
+}
+variable  "R_AB" { //3 values
+	type discrete[3] {  "A_win"  "B_win"  "draw" };
+	property "position = (374, 315)" ;
+}
+variable  "R_AC" { //3 values
+	type discrete[3] {  "A_win"  "C_win"  "draw" };
+	property "position = (461, 316)" ;
+}
+variable  "R_BC" { //3 values
+	type discrete[3] {  "B_win"  "C_win"  "draw" };
+	property "position = (423, 390)" ;
+}
+probability (  "A" ) { //1 variable(s) and 4 values
+	table 
+		0.25	// p(0 | evidence )
+		0.25	// p(1 | evidence )
+		0.25	// p(2 | evidence )
+		0.25; 	// p(3 | evidence );
+}
+probability (  "B" ) { //1 variable(s) and 4 values
+	table 
+		0.25	// p(0 | evidence )
+		0.25	// p(1 | evidence )
+		0.25	// p(2 | evidence )
+		0.25; 	// p(3 | evidence );
+}
+probability (  "C" ) { //1 variable(s) and 4 values
+	table 
+		0.25	// p(0 | evidence )
+		0.25	// p(1 | evidence )
+		0.25	// p(2 | evidence )
+		0.25; 	// p(3 | evidence );
+}
+probability (  "R_AB"  "A"  "B" ) { //3 variable(s) and 48 values
+	table 
+		 0.3 0.2 0.1 0.0 0.5 0.3 0.2 0.1 0.7 0.5 0.3 0.2 0.9 0.7 0.5 0.3 0.3 0.5 0.7 0.9 0.2 0.3 0.5 0.7 0.1 0.2 0.3 0.5 0.0 0.1 0.2 0.3 0.4 0.3 0.2 0.1 0.3 0.4 0.3 0.2 0.2 0.3 0.4 0.3 0.1 0.2 0.3 0.4;
+}
+probability (  "R_AC"  "A"  "C" ) { //3 variable(s) and 48 values
+	table 
+		 0.3 0.2 0.1 0.0 0.5 0.3 0.2 0.1 0.7 0.5 0.3 0.2 0.9 0.7 0.5 0.3 0.3 0.5 0.7 0.9 0.2 0.3 0.5 0.7 0.1 0.2 0.3 0.5 0.0 0.1 0.2 0.3 0.4 0.3 0.2 0.1 0.3 0.4 0.3 0.2 0.2 0.3 0.4 0.3 0.1 0.2 0.3 0.4;
+}
+probability (  "R_BC"  "B"  "C" ) { //3 variable(s) and 48 values
+	table 
+		 0.3 0.2 0.1 0.0 0.5 0.3 0.2 0.1 0.7 0.5 0.3 0.2 0.9 0.7 0.5 0.3 0.3 0.5 0.7 0.9 0.2 0.3 0.5 0.7 0.1 0.2 0.3 0.5 0.0 0.1 0.2 0.3 0.4 0.3 0.2 0.1 0.3 0.4 0.3 0.2 0.2 0.3 0.4 0.3 0.1 0.2 0.3 0.4;
+}

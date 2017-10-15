@@ -1,0 +1,105 @@
+// Bayesian network 
+network "InternalNetwork" { //12 variables and 12 probability distributions
+}
+variable  "A" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (198, 201)" ;
+}
+variable  "B" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (328, 199)" ;
+}
+variable  "C" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (433, 199)" ;
+}
+variable  "D" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (544, 201)" ;
+}
+variable  "E" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (649, 200)" ;
+}
+variable  "F" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (250, 320)" ;
+}
+variable  "G" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (376, 313)" ;
+}
+variable  "H" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (490, 309)" ;
+}
+variable  "I" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (602, 315)" ;
+}
+variable  "J" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (326, 394)" ;
+}
+variable  "K" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (546, 387)" ;
+}
+variable  "L" { //3 values
+	type discrete[3] {  "dd"  "pd"  "pp" };
+	property "observed dd" ;
+	property "position = (436, 474)" ;
+}
+probability (  "A" ) { //1 variable(s) and 2 values
+	table 
+		0.01	// p(pd | evidence )
+		0.99; 	// p(pp | evidence );
+}
+probability (  "B" ) { //1 variable(s) and 2 values
+	table 
+		0.01	// p(pd | evidence )
+		0.99; 	// p(pp | evidence );
+}
+probability (  "C" ) { //1 variable(s) and 2 values
+	table 
+		0.01	// p(pd | evidence )
+		0.99; 	// p(pp | evidence );
+}
+probability (  "D" ) { //1 variable(s) and 2 values
+	table 
+		0.01	// p(pd | evidence )
+		0.99; 	// p(pp | evidence );
+}
+probability (  "E" ) { //1 variable(s) and 2 values
+	table 
+		0.01	// p(pd | evidence )
+		0.99; 	// p(pp | evidence );
+}
+probability (  "F"  "A"  "B" ) { //3 variable(s) and 8 values
+	table 
+		 0.67 0.5 0.5 0.0 0.33 0.5 0.5 1.0;
+}
+probability (  "G"  "B"  "C" ) { //3 variable(s) and 8 values
+	table 
+		 0.67 0.5 0.5 0.0 0.33 0.5 0.5 1.0;
+}
+probability (  "H"  "C"  "D" ) { //3 variable(s) and 8 values
+	table 
+		 0.67 0.5 0.5 0.0 0.33 0.5 0.5 1.0;
+}
+probability (  "I"  "E"  "B" ) { //3 variable(s) and 8 values
+	table 
+		 0.67 0.5 0.5 0.0 0.33 0.5 0.5 1.0;
+}
+probability (  "J"  "F"  "G" ) { //3 variable(s) and 8 values
+	table 
+		 0.67 0.5 0.5 0.0 0.33 0.5 0.5 1.0;
+}
+probability (  "K"  "I"  "H" ) { //3 variable(s) and 8 values
+	table 
+		 0.67 0.5 0.5 0.0 0.33 0.5 0.5 1.0;
+}
+probability (  "L"  "J"  "K" ) { //3 variable(s) and 12 values
+	table 
+		 0.25 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.25 0.5 0.5 1.0;
+}
